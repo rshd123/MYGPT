@@ -7,6 +7,7 @@ import React from 'react'
 
 function App() {
   const [messages, setMessages] = useState([]); 
+  const [started, setStarted] = useState(true);
 
   const addMessage = (messageText) => {
     const newMessage = {
@@ -66,17 +67,21 @@ function App() {
 
   return (
     <>
-      <div className={classes.start}>
-        Start a conversation with MYGPT....!
-        <button className={classes.startBtn}>
-          <i class="fa-solid fa-play"></i>
-        </button>
-      </div>
-      {/* <div className={classes.container}>
-        <Header />
-        <Body messages={messages} />
-        <Chatform onSendMessage={addMessage} onBotMessage={addBotMessage} />
-      </div> */}
+      {
+        started ?
+        <div className={classes.start}>
+          Start a conversation with MYGPT....!
+          <button className={classes.startBtn} onClick={() => setStarted(false)}>
+            <i class="fa-solid fa-play"></i>
+          </button>
+        </div>
+        :
+        <div className={classes.container}>
+          <Header />
+          <Body messages={messages} />
+          <Chatform onSendMessage={addMessage} onBotMessage={addBotMessage} />
+        </div>
+      }
     </>
   )
 }

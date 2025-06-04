@@ -9,6 +9,30 @@ body{
     background-color: hsl(0, 0%, 7%);
 }
 
+/* Add these transition classes */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* For the container transitions */
+.container, .start {
+  transition: all 0.3s ease-in-out;
+}
+
 .start{
     position: absolute;
     top: 50%;
@@ -21,6 +45,8 @@ body{
     align-items: center;
     gap: 10px;
 }
+
+
 
 .startBtn {
     width: 50px;
@@ -191,7 +217,7 @@ body{
         font-size: 1rem;
         margin-top: 8px;
     }
-    
+
     .container {
         width: 95%;
         height: 90vh;
