@@ -15,11 +15,14 @@ export default function Body({ messages }) {
     return (
         <div className={classes.msgs}>
             {messages.map((msg, index) => (
-                <div 
-                    key={index} 
-                    className={msg.sender === 'bot' ? classes.left : classes.right}
-                >
-                    {msg.text}
+                <div className={classes.msgContainer} key={index}>
+                    { msg.sender==='bot'?<div><i className="fa-solid fa-robot"></i></div>:<></>}
+                    <div
+                        key={index}
+                        className={msg.sender === 'bot' ? classes.left : classes.right}
+                    >
+                        {msg.text}
+                    </div>
                 </div>
             ))}
             <div ref={messagesEndRef} />
