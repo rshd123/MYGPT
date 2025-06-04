@@ -37,6 +37,9 @@
     margin: 20px 0px;
     flex: 1;
     overflow-y: auto;
+    scrollbar-color: grey transparent;
+    scroll-margin-left: 2px;
+    scroll-behavior: smooth;
 }
 
 .left{
@@ -53,6 +56,7 @@
     width: 50%;
     padding: 10px;
     margin-left: auto;
+    margin-top: 10px;
 }
 .form{
     text-align: center;   
