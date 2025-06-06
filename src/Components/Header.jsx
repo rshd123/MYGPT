@@ -6,7 +6,7 @@ export default function Header(){
         <div className={classes.header}>
             {/* <i className="fa-solid fa-robot"></i> */}
             <span className={classes.logo_name}>
-                My-GPT
+                MYGPT
             </span>
         </div>
     );
